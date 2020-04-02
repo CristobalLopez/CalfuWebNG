@@ -15,6 +15,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ArtworkComponent } from './components/artwork/artwork.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtworksComponent } from './components/artworks/artworks.component';
+import { LoginComponent } from './components/login/login.component';
+import { ConfigComponent } from './components/config/config.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ArtworksComponent } from './components/artworks/artworks.component';
     ContactComponent,
     ArtworkComponent,
     NavbarComponent,
-    ArtworksComponent
+    ArtworksComponent,
+    LoginComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
