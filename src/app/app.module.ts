@@ -1,16 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Rutas
+import { APPROUTING } from './app.routes';
+
+// Servicios
+import { ArtworksService } from './servicios/artworks.service';
+
+// Componentes
 import { AppComponent } from './app.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ArtworkComponent } from './components/artwork/artwork.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ArtworksComponent } from './components/artworks/artworks.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    HomeComponent,
+    ContactComponent,
+    ArtworkComponent,
+    NavbarComponent,
+    ArtworksComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APPROUTING
   ],
-  providers: [],
+  providers: [
+    ArtworksService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
