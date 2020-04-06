@@ -6,6 +6,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ArtworksComponent  } from './components/artworks/artworks.component';
 import { ConfigComponent } from './components/config/config.component';
 import { LoginComponent } from './components/login/login.component';
+import { ResetComponent} from './components/reset/reset.component';
 
 
 
@@ -17,6 +18,7 @@ const ROUTES: Routes = [
     { path: 'contact', component: ContactComponent},
     { path: 'login', component: LoginComponent},
     { path: 'config', component: ConfigComponent},
+    { path: 'reset', component: ResetComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

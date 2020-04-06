@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtworksComponent } from './components/artworks/artworks.component';
 import { LoginComponent } from './components/login/login.component';
 import { ConfigComponent } from './components/config/config.component';
+import { ResetComponent } from './components/reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ConfigComponent } from './components/config/config.component';
     NavbarComponent,
     ArtworksComponent,
     LoginComponent,
-    ConfigComponent
+    ConfigComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
