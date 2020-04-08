@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 // Rutas
 import { APPROUTING } from './app.routes';
@@ -34,7 +35,8 @@ import { ResetComponent } from './components/reset/reset.component';
   ],
   imports: [
     BrowserModule,
-    APPROUTING
+    APPROUTING, 
+    HttpClientModule
   ],
   providers: [
     ArtworksService

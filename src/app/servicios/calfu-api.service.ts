@@ -18,5 +18,9 @@ export class CalfuApiService {
   constructor(private http: HttpClient) { 
     
   }
+
+  traeObras(){
+    return this.http.get(`${this.url}/ObraMstr`);      
+  }
   
 }
