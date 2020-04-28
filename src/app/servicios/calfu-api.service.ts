@@ -13,14 +13,23 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CalfuApiService {
-  private url ='http://localhost:60538/api/';
+  private url ='/api/';
 
   constructor(private http: HttpClient) { 
     
   }
 
   traeObras(){
-    return this.http.get(`${this.url}/ObraMstr`);      
+    return this.http.get(`${this.url}SelectTodasObras`);      
+  }
+
+  topFiveObras(){
+    
+    return this.http.get(`${this.url}TopFiveObras`); 
+  }
+
+  login(name: string, pass: string){
+    return this.http.get(`${this.url}Login?name=${name}&pass=${pass}`);
   }
   
 }

@@ -21,6 +21,11 @@ export class ArtworksComponent implements OnInit {
     subscribe( resp=>{
       console.log(resp);
     });
+
+    this._calfService.topFiveObras().
+    subscribe( resp=>{
+      console.log(resp);
+    });
   }
 
   verArtwork( idx: number ){
