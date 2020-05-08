@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtworksService, Artwork } from '../../servicios/artworks.service';
 import { Router } from '@angular/router';
 import { CalfuApiService } from '../../servicios/calfu-api.service';
+// import { ObraMstrModel } from '../../models/obraMstr.model';
+// import { ArtworksService, Artwork } from '../../servicios/artworks.service';
 
 @Component({
   selector: 'app-artworks',
@@ -9,17 +10,17 @@ import { CalfuApiService } from '../../servicios/calfu-api.service';
 })
 export class ArtworksComponent implements OnInit {
 
-  artworks: Artwork[] = [];
+  
+  artworks: any = [];
 
-  constructor( private _artworksService: ArtworksService, private _calfService: CalfuApiService,
-               private _router: Router) { }
+  constructor(  private _calfService: CalfuApiService, private _router: Router) { }
 
   ngOnInit() {
 
-    this.artworks = this._artworksService.getArtworks();
-    this._calfService.traeObras().
-    subscribe( resp=>{
-      console.log(resp);
+    this.selectObras()
+    .subscribe((data: any)=> {
+      console.log(data);
+      this.artworks=data;
     });
 
     this._calfService.topFiveObras().
@@ -30,7 +31,12 @@ export class ArtworksComponent implements OnInit {
 
   verArtwork( idx: number ){
     this._router.navigate( ['/artwork', idx]);
+    
 
+  }
+
+  selectObras(){
+    return this._calfService.traeObras();
   }
 
 }

@@ -20,7 +20,8 @@ export class CalfuApiService {
   }
 
   traeObras(){
-    return this.http.get(`${this.url}SelectTodasObras`);      
+    return this.http.get(`${this.url}SelectTodasObras`);
+        
   }
 
   topFiveObras(){
@@ -30,6 +31,11 @@ export class CalfuApiService {
 
   login(name: string, pass: string){
     return this.http.get(`${this.url}Login?name=${name}&pass=${pass}`);
+  }
+
+  getObra( idx: string ){
+    return this.http.get(`${this.url}GetObra?id=${idx}`);
+
   }
   
 }
