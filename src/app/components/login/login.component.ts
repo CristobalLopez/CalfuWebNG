@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   userMstr : UserMstrModel = new UserMstrModel();
   recordarme= false;
+  auth: boolean = false;
 
   constructor(private _calfService: CalfuApiService,private router: Router) { }
 
@@ -40,6 +41,10 @@ export class LoginComponent implements OnInit {
     .subscribe(
       resp=>{
         console.log(resp);
+        if (resp) {
+          this.auth = true;
+          localStorage.setItem('auth', 'OK');
+        }
         Swal.close();
 
         if (this.recordarme) {
