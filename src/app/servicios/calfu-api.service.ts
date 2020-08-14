@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class CalfuApiService {
   private url ='/api/';
+  isLoggedIn: boolean =false;
 
   constructor(private http: HttpClient) { 
     
@@ -36,6 +37,10 @@ export class CalfuApiService {
   getObra( idx: string ){
     return this.http.get(`${this.url}GetObra?id=${idx}`);
 
+  }
+
+  logout(){
+    localStorage.removeItem('auth');
   }
   
 }

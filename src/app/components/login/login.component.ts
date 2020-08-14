@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         if (this.recordarme) {
           localStorage.setItem('name', this.userMstr.userName);
         }
-        this.router.navigateByUrl('/config');
+        this.router.navigateByUrl('/home');
       },
       (err)=>{
         console.log(err);
