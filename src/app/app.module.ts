@@ -20,6 +20,7 @@ import { ArtworksComponent } from './components/artworks/artworks.component';
 import { LoginComponent } from './components/login/login.component';
 import { ConfigComponent } from './components/config/config.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ResetComponent } from './components/reset/reset.component';
     ArtworksComponent,
     LoginComponent,
     ConfigComponent,
-    ResetComponent
+    ResetComponent,
+    NewUserComponent    
   ],
   imports: [
     BrowserModule,

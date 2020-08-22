@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="background-color: white;">
     <div class="container">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -9,7 +9,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item" *ngFor="let topfive of TopFives; let i=index" [ngClass]="{'active': i === 0}">
-                    <img [src]="['assets/img/'+ topfive.FILE_NAME]" class="d-block w-auto" [alt]="topfive.ALIAS">
+                    <img [src]="['assets/img/'+ topfive.FILE_NAME]" class="d-block w-100" style="height: 500px;" [alt]="topfive.ALIAS">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="display-4">Calfu Web</h1>
                         <p>{{topfive.ALIAS}}</p>

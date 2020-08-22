@@ -24,6 +24,9 @@
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
                 <li *ngIf="this.auth" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['new-user']">New User</a>
+                </li>
+                <li *ngIf="this.auth" class="nav-item" routerLinkActive="active">
                     <a class="nav-link" [routerLink]="['config']">Configuration</a>
                 </li>
                 <li *ngIf="!this.auth" class="nav-item" routerLinkActive="active">

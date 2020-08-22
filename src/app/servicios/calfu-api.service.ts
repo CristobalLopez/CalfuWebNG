@@ -42,5 +42,9 @@ export class CalfuApiService {
   logout(){
     localStorage.removeItem('auth');
   }
+
+  CrearUser(nUser: UserMstrModel){
+    return this.http.post(`${this.url}AddUser?userDto=${nUser}`, null);
+  }
   
 }

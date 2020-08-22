@@ -22,7 +22,8 @@
 
                 <!-- <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">La contraseña debe de ser más de 6 letras</span> -->
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="text" name="mensaje" required minlength="6" placeholder="Mensaje">
+                    <!-- <input class="input100" type="text" name="mensaje" required minlength="6" style="height: 300px;" placeholder="Mensaje"> -->
+                    <textarea class="input100" name="mensaje" required minlength="6" style="height: 300px; padding-top: 10px;" placeholder="Mensaje"></textarea>
                     <span class="focus-input100"></span>
                 </div>
 
