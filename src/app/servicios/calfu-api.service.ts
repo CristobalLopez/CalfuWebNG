@@ -14,37 +14,46 @@ import { map } from 'rxjs/operators';
 })
 export class CalfuApiService {
   private url ='/api/';
+  private headers: Headers;
   isLoggedIn: boolean =false;
 
   constructor(private http: HttpClient) { 
     
   }
+//#region Funciones relacionadas a las obras
 
-  traeObras(){
-    return this.http.get(`${this.url}SelectTodasObras`);
-        
-  }
+getObra( idx: string ){
+  return this.http.get(`${this.url}GetObra?id=${idx}`);
+}
 
-  topFiveObras(){
-    
-    return this.http.get(`${this.url}TopFiveObras`); 
-  }
+traeObras(){
+  return this.http.get(`${this.url}SelectTodasObras`);      
+}
 
-  login(name: string, pass: string){
-    return this.http.get(`${this.url}Login?name=${name}&pass=${pass}`);
-  }
+topFiveObras(){
+  
+  return this.http.get(`${this.url}TopFiveObras`); 
+}
 
-  getObra( idx: string ){
-    return this.http.get(`${this.url}GetObra?id=${idx}`);
+RemoverObra(id : number){  
+  return this.http.get(`${this.url}DeleteObra?id=${id}`);
+}
+//#endregion
 
-  }
+//#region Funciones relacionadas a Usuarios 
+login(name: string, pass: string){
+  return this.http.get(`${this.url}Login?name=${name}&pass=${pass}`);
+}  
 
-  logout(){
-    localStorage.removeItem('auth');
-  }
+logout(){
+  localStorage.removeItem('auth');
+}
 
-  CrearUser(nUser: UserMstrModel){
-    return this.http.post(`${this.url}AddUser?userDto=${nUser}`, null);
-  }
+CrearUser(nUser: UserMstrModel){
+  return this.http.post(`${this.url}AddUser?userDto=${nUser}`, null);
+}
+//#endregion
+
+  
   
 }

@@ -3,6 +3,8 @@ import { CalfuApiService } from '../../servicios/calfu-api.service';
 import { Router } from '@angular/router';
 import { UserMstrModel } from '../../models/userMstr.model';
 import { NgForm } from '@angular/forms';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { ObraMstrModel } from '../../models/obraMstr.model';
 
 @Component({
   selector: 'app-config',
@@ -30,6 +32,19 @@ export class ConfigComponent implements OnInit {
   selectObras(){
     return this._calfuService.traeObras();
   }
+
+  editObra( idx: number ){
+    this._router.navigate( ['/artwork', idx]);  
+
+  }
+  removeObra( id : number ){
+    
+    return this._calfuService.RemoverObra(id);
+
+  }
+
+
+
 
   newUser : UserMstrModel;
   ShowNewUser(){
