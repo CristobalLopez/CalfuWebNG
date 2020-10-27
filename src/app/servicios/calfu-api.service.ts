@@ -36,13 +36,16 @@ topFiveObras(){
 }
 
 RemoverObra(id : number){  
-  return this.http.get(`${this.url}DeleteObra?id=${id}`);
+  
+    return this.http.get(`${this.url}RemoveObra?id=${id}`); 
+  
+  
 }
 //#endregion
 
 //#region Funciones relacionadas a Usuarios 
 login(name: string, pass: string){
-  return this.http.get(`${this.url}Login?name=${name}&pass=${pass}`);
+  return this.http.get(`${this.url}Login?nick=${name}&pass=${pass}`);
 }  
 
 logout(){
