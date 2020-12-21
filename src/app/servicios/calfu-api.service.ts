@@ -35,8 +35,9 @@ topFiveObras(){
   return this.http.get(`${this.url}TopFiveObras`); 
 }
 
-RemoverObra(id : number){  
+RemoverObra(id : string){  
   
+  console.log(this.http.get(`${this.url}RemoveObra?id=${id}`));
     return this.http.get(`${this.url}RemoveObra?id=${id}`); 
   
   

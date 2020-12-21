@@ -37,7 +37,7 @@ export class ConfigComponent implements OnInit {
     this._router.navigate( ['/artwork', idx]);  
 
   }
-  removeObra( id : number ){
+  removeObra( id : string ){
     
     return this._calfuService.RemoverObra(id);
 
